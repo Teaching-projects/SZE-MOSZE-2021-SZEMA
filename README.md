@@ -48,8 +48,28 @@ kisegíteni a nappali tagozatos vagy akár távoktatásba jelentkezett hallgató
 
   </ul>
 
-<h2>Doxygen dokumentáció </h2>
+<h2>Docker</h2>
 ...hamarosan
 
+
+<h2>Doxygen dokumentáció </h2>
+
+Mivel a frontendként a React keresztrendszert használtuk az alkalmazás fejlesztése során, ezért a dokumentáláshoz megvizsgáltuk a különböző felhasználható alternativákat, mint:
+* JSDoc: 
+  * A react komponenseit használva készít dokumentációt a kódból.
+  * Visual Studio Code-al támogatottság.
+* React Styleguidist:
+  * Az elkészített kódból generál dokumentumot API segítségével.
+  * Könnyen konfigurálható, könnyen elérhetők a dokumentumok
+  * A dokumentáció hosztolható webpack segítségével.
+
 <h2>Unit tesztelés </h2>
-...hamarosan
+Hogyan unit tesztelhetünk react komponenseket?
+
+* Ellenőrizhetők az egyes függvények, meghívódnak-e a bizonyos események bekövetkezésekor.
+* Megkaphatjuk a render függvények eredményének ellenőrzései, hogy egyeznek  a komponensek előre definiált státuszaival.
+* Komponens gyerekeinek a számának ellenőrzése a kívánt értékekkel.
+
+React komponensek unit teszteléséhez:
+
+* Jest: Nyílt forráskódú tesztelő keresztendszer, Facebook hozta létre. Tesztek futtatása parancssorból akár. Snapshot tesztelés funkció.
