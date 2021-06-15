@@ -1,16 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route } from "react-router-dom"
+import Login from "./components/auth/Login"
+import { AuthProvider } from "./components/auth/Auth"
+import PrivateRoute from "./components/auth/PrivateRoute"
 
-function App() {
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          <code>SZEMA rendszer init beallitas</code>
-        </p>
-      </header>
-    </div>
+
   );
 }
 
