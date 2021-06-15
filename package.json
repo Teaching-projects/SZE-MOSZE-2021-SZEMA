@@ -1,14 +1,37 @@
 {
-  "name": "name-of-proj",
+  "name": "my-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.11.3",
+    "@material-ui/icons": "^4.11.2",
+    "@material-ui/lab": "^4.0.0-alpha.57",
+    "@progress/kendo-react-dropdowns": "^4.4.0",
+    "@react-firebase/auth": "^0.2.10",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
-    "@testing-library/user-event": "^12.8.3",
+    "@testing-library/user-event": "^12.7.1",
+    "firebase": "^8.2.9",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-scripts": "4.0.3",
+    "react-dom": "^17.0.2",
+    "react-firebase": "^2.2.8",
+    "react-firebaseui": "^4.1.0",
+    "react-loader-spinner": "^4.0.0",
+    "react-redux": "^7.2.2",
+    "react-redux-firebase": "^3.10.0",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.2",
+    "react-search-field": "^1.2.0",
+    "react-select": "^4.3.1",
+    "react-uuid": "^1.0.2",
+    "react-window": "^1.8.6",
+    "redux": "^4.0.5",
+    "redux-firestore": "^0.15.0",
+    "redux-thunk": "^2.3.0",
+    "sass": "^1.32.7",
+    "scss": "^0.2.4",
+    "thunk": "^0.0.1",
     "web-vitals": "^1.1.0"
   },
   "scripts": {
@@ -34,5 +57,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "node-sass": "^5.0.0"
   }
 }
