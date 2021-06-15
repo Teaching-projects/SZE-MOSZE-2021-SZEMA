@@ -9,7 +9,6 @@ import NewsDashboard from './components/dashboards/NewsDashboard'
 import MainDashboard from "./components/dashboards/MainDashboard"
 import TestMakerDashboard from './components/dashboards/TestMakerDashboard'
 
-
 const App = () => {
   return (
     <AuthProvider>
@@ -24,6 +23,6 @@ const App = () => {
       </Router>
     </AuthProvider>
   );
-}
+};
 
 export default App;
