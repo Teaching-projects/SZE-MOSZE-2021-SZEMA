@@ -19,6 +19,8 @@ import InboxIcon from '@material-ui/icons/Inbox';
 import DraftsIcon from '@material-ui/icons/Drafts';
 
 import TextField from '@material-ui/core/TextField';
+import Autocomplete from '@material-ui/lab/Autocomplete';
+
 import MenuItem from '@material-ui/core/MenuItem';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
@@ -28,6 +30,10 @@ import Button from '@material-ui/core/Button';
 
 import Tooltip from '@material-ui/core/Tooltip';
 
+import QuestionAddAnswer from './questionBaseComponents/QuestionAddAnswer';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import SearchIcon from "@material-ui/icons/Search";
+
 //for lists
 function ListItemLink(props) {
   
@@ -35,6 +41,25 @@ function ListItemLink(props) {
   return <ListItem button component="a" {...props} />;
   
 }
+
+const temakorok = [
+  { title: 'Térelemek ábrázolása', id: 1 },
+  { title: 'Síklapú testek vetületi ábrázolása', id: 2 },
+  { title: 'Forgástestek vetületi ábrázolás', id: 3 },
+  { title: 'Áthjatások/vetítési. Rajzi egyszerűsítések', id: 4 },
+  { title: 'Metszeti ábrázolás', id: 5 },
+  { title: "Méretmegadás műszaki rajzokon", id: 6 },
+];
+
+const kerdesek = [
+  { title: 'Elso kerdes', id: 20 },
+  { title: 'Masodik kerdes', id: 21 },
+  { title: 'Harmadik kerdes', id: 22 },
+  { title: 'Negyedik kerdes', id: 23 },
+  { title: 'Otodik kerdes', id: 24 },
+  { title: "Hatodik kerdes", id: 25 },
+  { title: 'Hetedik kerdes', id: 26 },
+];
 
 
 const useStyles = (theme) => ({
@@ -96,9 +121,13 @@ const useStyles = (theme) => ({
     marginTop: '-25px',
     marginBottom: '15px',
   },
+  gombok: {
+    padding: '2rem',
+  },
   formControl: {
     float: 'left',
     marginBottom: '10px',
+    marginLeft: '16px',
   }
 });
 
@@ -112,6 +141,23 @@ class QuestionBaseDashboard extends React.Component {
   }
   componentDidMount(){
   }
+
+  cancelCourse = () => { 
+    this.setState({
+      inputVal_1: ""
+    });
+  }
+
+  state = {
+    userInput: ''
+   }
+
+   onClick = () => {
+    this.setState({
+      userInput: 'Test'
+    })
+  }
+
   render(){
   
 
@@ -137,45 +183,35 @@ class QuestionBaseDashboard extends React.Component {
             
       <div className={classes.createQuestion}>
       <h1>Kérdés létrehozása</h1><Divider />
-      
-      <FormControl className={classes.formControl}>
-        <InputLabel id="demo-simple-select-helper-label">Témakör...</InputLabel>
+  
+      <Container>
+      <FormControl  className={classes.formControl}>
+        <InputLabel  id="demo-simple-select-helper-label">Témakör kiválasztása</InputLabel>
         <Select
           labelId="demo-simple-select-helper-label"
           id="demo-simple-select-helper">
-          <MenuItem value="">
+          <MenuItem value={0}>
             <em>Nincs témakör</em>
           </MenuItem>
-          <MenuItem>Térelemek ábrázolása</MenuItem>
-          <MenuItem >Síklapú testek vetületi ábrázolása</MenuItem>
-          <MenuItem >Forgástestek vetületi ábrázolás</MenuItem>
-          <MenuItem>Áthjatások/vetítési. Rajzi egyszerűsítések</MenuItem>
-          <MenuItem >Metszeti ábrázolás</MenuItem>
-          <MenuItem >Méretmegadás műszaki rajzokon</MenuItem>
+          <MenuItem value={1}>Térelemek ábrázolása</MenuItem>
+          <MenuItem value={2}>Síklapú testek vetületi ábrázolása</MenuItem>
+          <MenuItem value={3}>Forgástestek vetületi ábrázolás</MenuItem>
+          <MenuItem value={4}>Áthjatások/vetítési. Rajzi egyszerűsítések</MenuItem>
+          <MenuItem value={5}>Metszeti ábrázolás</MenuItem>
+          <MenuItem value={6}>Méretmegadás műszaki rajzokon</MenuItem>
         </Select>
-        <FormHelperText>Válassza ki a témakörbe kategorizáláshoz</FormHelperText>
+        <FormHelperText>Témakör kiválasztása a kérdés kategorizálásához</FormHelperText>
       </FormControl>
-
-      <h4>Megadható válaszok száma</h4>
-      <TextField
-          id="outlined-number"
-          //label="Válaszok száma"
-          type="number"
-          InputLabelProps={{
-            shrink: true,
-          }}
-          variant="outlined"
-        />
-
+      </Container>
       <form className={classes.root} noValidate autoComplete="off">
-      {/*<TextField id="standard-basic" label="Kérdés" />*/}
-      <TextField
+      
+      <TextField 
           id="outlined-full-width"
           label="Új kérdés létrehozása"
           style={{ margin: 8 }}
           placeholder="Kérem írja be a kérdést..."
          // helperText="Full width!"
-          fullWidth
+         style ={{width: '91%'}}
           multiline
           margin="normal"
           InputLabelProps={{
@@ -187,9 +223,9 @@ class QuestionBaseDashboard extends React.Component {
           id="outlined-full-width"
           label="Helyes válasz megadása"
           style={{ margin: 8 }}
-          placeholder="Kérem adja meg a helyes választ."
+          placeholder="Kérem írja be a helyes választ..."
          // helperText="Full width!"
-          fullWidth
+         style ={{width: '91%'}}
           multiline
           margin="normal"
           InputLabelProps={{
@@ -197,49 +233,23 @@ class QuestionBaseDashboard extends React.Component {
           }}
           variant="outlined"
         />
-        
-        <TextField
-          id="outlined-full-width"
-          //label="Új válasz létrehozása"
-          style={{ margin: 8 }}
-          placeholder="Kérem adjon meg egy választ."
-         // helperText="Full width!"
-          fullWidth
-          multiline
-          margin="normal"
-          InputLabelProps={{
-            shrink: true,
-          }}
-          variant="outlined"
-        />
-        <TextField
-          id="outlined-full-width"
-         //label="Új válasz létrehozása"
-          style={{ margin: 8 }}
-          placeholder="Kérem adjon meg egy választ."
-         // helperText="Full width!"
-          fullWidth
-          multiline
-          margin="normal"
-          InputLabelProps={{
-            shrink: true,
-          }}
-          variant="outlined"
-        />
+          {/* ide a valasz lehetosegeket hozzaado comp */}
+          <QuestionAddAnswer/> 
 
+          {/*<input id="haha" value={this.state.userInput} name="sampleInput" />*/}
 
-    <Tooltip title={<h1 style={{lineHeight:"1.5rem", fontSize:"15px", color: "lightblue" }}>Ezzel a gombbal a kérdés létrehozása mezők törölhetők.</h1>}>
-    <Button variant="contained">Elvetés</Button>
+     {/* Elvetésre rányomva a módosítás gomb megjelenik és a hozzáadás is. Kérdések a ... témakörben-re rányomva pedig a módosítás és a hozzáadás eltűnik. */}
+    <div className={classes.gombok}>
+    <Tooltip title={<h1 style={{lineHeight:"1.5rem", fontSize:"15px", color: "lightblue", margin: "2rem" }}>Ezzel a gombbal a kérdés létrehozása mezők törölhetők.</h1>}>
+    <Button variant="contained" onClick={this.cancelCourse}>Elvetés</Button>
     </Tooltip>
     <Tooltip title={<h1 style={{lineHeight:"1.5rem", fontSize:"15px", color: "lightblue" }}>Ezzel a gombbal a jelenleg betöltött kérdés módosítható.</h1>}>
-    <Button variant="contained" color="primary">
-     Módosítás
-    </Button></Tooltip>
+    <Button variant="contained" color="primary" style={{margin:"1rem"}} >Módosítás</Button>
+    </Tooltip>
     <Tooltip title={<h1 style={{lineHeight:"1.5rem", fontSize:"15px", color: "lightblue" }}>Ezzel a gombbal a eegy új kérdés adható hozzá a kiválasztott témakorhöz.</h1>}>
-    <Button variant="contained" color="secondary">
-      Hozzáadás
-    </Button></Tooltip>
-
+    <Button variant="contained" color="secondary">Hozzáadás</Button>
+    </Tooltip>
+    </div>
        
 
   {/*><TextField id="filled-basic" label="Filled" variant="filled" />
@@ -249,21 +259,44 @@ class QuestionBaseDashboard extends React.Component {
             
       <div className={classes.themeQuestions}>
       
-      <SearchField placeholder='Keresés a témakörök között...'  />
+      
       <h1>Témakörök a kérdésekhez</h1>
+      {/*<SearchField placeholder='Keresés a témakörök között...' />*/}
+
+      <Autocomplete
+        freeSolo
+        id="free-solo-2-demo"
+        disableClearable
+        options={temakorok.map((option) => option.title)}
+        renderInput={(params) => (
+          <TextField
+            {...params}
+            label="Keresés a témakörök között..."
+            margin="normal"
+            variant="outlined"
+            InputProps={{ ...params.InputProps, type: 'search',  endAdornment: (
+              <InputAdornment position="start">
+                <SearchIcon />
+              </InputAdornment>
+             ) }}
+            />
+            )}
+          />
+
       <Divider />
       <List component="nav" aria-label="secondary mailbox folders"> 
         <ListItem button> {/*  simple button */}
+        
           <ListItemText primary="Térelemek ábrázolása" />
         </ListItem>
-        <ListItemLink href="#simple-list">  {/*  LINK! */}
+        <ListItemLink href="#simple-list">    
           <ListItemText primary="Síklapú testek vetületi ábrázolása" /> 
         </ListItemLink>
         <ListItem button>
           <ListItemText primary="Forgástestek vetületi ábrázolása" />
         </ListItem>
         <ListItem button>
-          <ListItemText primary="Áthatások/Vetítési. Rajzi egyszerűsítések" />
+          <ListItemText primary="Áthatások/Vetítési. Rajzi egyszerűsítések" />*/}
         </ListItem>
         <ListItem button>
           <ListItemText primary="Metszeti ábrázolás" />
@@ -278,8 +311,35 @@ class QuestionBaseDashboard extends React.Component {
     
 
     <div className={classes.themeQuestions}>
-    <SearchField placeholder='Keresés a kérdések között...'  />
-      <h1>Kérdések a ... témakörben</h1><Divider />
+    
+      <h1>Kérdések keresése témakörben</h1>
+
+      <Autocomplete
+        freeSolo
+        id="free-solo-2-demo"
+        disableClearable
+        options={kerdesek.map((option) => option.title)}
+        renderInput={(params) => (
+          <TextField
+            {...params}
+            label="Keresés a kérdések között..."
+            margin="normal"
+            variant="outlined"
+            
+            InputProps={{ ...params.InputProps, type: 'search',  endAdornment: (
+              <InputAdornment position="start">
+                <SearchIcon />
+              </InputAdornment>
+             ) }}
+            />
+            )}
+          />
+        
+     
+    
+
+
+      <Divider />
     <List component="nav" aria-label="secondary mailbox folders">  
           <ListItem button > {/*  simple button */}
           <ListItemText primary="Elso kerdes" />
