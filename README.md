@@ -73,3 +73,7 @@ Hogyan unit tesztelhetünk react komponenseket?
 React komponensek unit teszteléséhez:
 
 * Jest: Nyílt forráskódú tesztelő keresztendszer, Facebook hozta létre. Tesztek futtatása parancssorból akár. Snapshot tesztelés funkció.
+
+
+
+## 2021
