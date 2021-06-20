@@ -1,0 +1,135 @@
+body{
+    margin:0;
+    padding:0;
+    
+}
+footer{
+    height: 10vh;
+    display: block;
+    justify-content: center;
+    /*background-color: '#2196f3';*/
+}
+#main-welcome{
+    height: 100vh;
+    bottom: 0;
+    background-color: #bbdefa;
+    align-content: center;
+    display: none; /*flex*/
+    vertical-align: middle;
+    justify-content: center;
+    position: relative;
+}
+#main-start{
+    padding-top: 50vh;
+    padding-bottom: 50vh;
+    display:flex; /*none*/
+    height: 100vh;
+    bottom: 0;
+    background-image: url(../SZEMA_WEB_background_3.svg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+#welcome-content{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 40%;
+    height: 30vh;
+    background-color: white;
+    border-radius: 1%;
+    padding: 30px;
+    box-sizing: border-box;
+    border: outset;
+    position: fixed;
+}
+#welcome-text{
+    width: 100%;
+    height: 50%;
+    font-size: 1.5vw;
+    text-align: justify;
+    text-justify: inter-word;
+    color:#666666;
+}
+#welcome-rest{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-content: space-around;
+}
+#welcome-rest a button, #welcome-rest button{
+    width:30%;
+    height: 80%;
+    font-size: 1vw;
+    text-transform: none;
+    border: outset;
+    color: white;
+    border-radius: 5%;
+    background-color: #1970b7;
+    display: block;
+}
+#welcome-rest a button:hover, #welcome-rest button:hover{
+    background-color: #2296f2;
+}
+#welcome-rest a{
+    display: contents;
+    overflow: hidden;
+    box-sizing:content-box;
+    text-decoration: none;
+}
+
+#main-start-wrapper{
+    margin: 0;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 60%;
+    background-color: whitesmoke;
+    border-radius: 1%;
+    border: outset;
+    display: table;
+}
+.choose-content{
+    width:100%;
+    min-height: 20vh;
+    padding: 30px;
+    box-sizing: border-box;
+    display: contents;
+}
+#setup-test{
+    width : 100px;
+}
+.question-content{
+    text-align: center;
+    padding: 30px;
+    width: 100%;
+    min-height: 20vh;
+    box-sizing: border-box;
+    display: contents;
+}
+.member-content{
+    text-align: center;
+    padding: 30px;
+    width: 100%;
+    min-height: 20vh;
+    box-sizing: border-box;
+    display: contents;
+}
+.center-fullwidth{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+}
+#select-top{
+    width:50%;
+}

@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+.App {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Open Sans", sans-serif;
+    height: 100vh;
+    overflow: none;
+}
+header{
+    background: '#2196f3'
+}
+.login {
+    width: 27em;
+    height: 40em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+    position: relative;
+    z-index: 99;
+}
+.login .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0px 0px 12px 2px rgba(15, 15, 15, 0.2);
+    border-radius: 4px;
+    position: relative;
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    padding: 17px 10px;
+}
+
+.login .right-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 90%;
+    background-color: #3498db;
+    width: 100%;
+    position: absolute;
+    right: -34%;
+    border-radius: 6px;
+    z-index: 1;
+    transition: all 400ms ease-in-out;
+    cursor: pointer;
+    box-shadow: 0px 0px 12px 2px rgba(15, 15, 15, 0.281);
+}
+
+.login .right-side.right {
+    right: -40%;
+    align-items: flex-end;
+}
+
+.login .right-side.right:hover {
+    right: -45%;
+}
+
+.login .right-side.left {
+    right: 40%;
+    align-items: flex-start;
+}
+
+.login .right-side.left:hover {
+    right: 45%;
+}
+
+.login .right-side .text {
+    font-size: 21px;
+    font-weight: 500;
+    color: #fff;
+    margin-right: 3em;
+    margin-left: 3em;
+}
+
+
+.btnL {
+    /*
+	 font-size: 21px;
+	 padding: 5px 20px;
+	 border: 0;
+	 background-color: #3498db;
+	 color: #fff;
+	 border-radius: 3px;
+	 transition: all 250ms ease-in-out;
+	 cursor: pointer;
+*/
+
+    border-radius: 5px;
+    width: 180px;
+    height: 60px;
+    cursor: pointer;
+   /* background: transparent;*/
+    background-color: #3498db;
+    border: 3px solid #91C9FF;
+    outline: none;
+    transition: 200ms ease-in-out;
+}
+
+.btnL:hover {
+    background-color: #2e23c8;
+    /*new*/
+    transition: 200ms ease-in-out;
+}
+
+
+/*
+ .btn:focus {
+	 outline: none;
+}
+*/
+
+
+/*new button animations*/
+
+.login svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    fill: none;
+    stroke: rgb(0, 0, 0);
+    stroke-dasharray: 150 480;
+    stroke-dashoffset: 150;
+    transition: 1s ease-in-out;
+}
+
+.btnL:hover svg{
+    stroke-dashoffset: -480;
+}
+
+.btnL span {
+    color: white;
+    font-size: 18px;
+    font-weight: 100;
+}
+
+.container {
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.center {
+    width: 180px;
+    height: 60px;
+    position: absolute;
+}
+.dropdownNavs{
+    display: contents;
+}
+.listNavs{
+    display: none;
+}
+@media screen and (min-width: 700px) {
+    .dropdownNavs{
+      display: none;
+    }
+    .listNavs{
+      display: contents;
+    }
+    .listNavs h5{
+        display: flex;
+        justify-content: left;
+    }
+    #home{
+        align-self: center;
+    }
+}
+.review-question:last-child{
+    margin-bottom: 50px;
+}
+.review-answer:last-child{
+    margin-bottom: 50px;
+}
+.MuiStepIcon-root.MuiStepIcon-active {
+    color: #2196f3 !important;
+}
+.MuiStepIcon-root.MuiStepIcon-completed {
+    color: #2196f3 !important;
+}
+footer{
+    bottom: 0;
+}
