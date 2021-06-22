@@ -296,7 +296,7 @@ class QuestionBaseDashboard extends React.Component {
           <ListItemText primary="Forgástestek vetületi ábrázolása" />
         </ListItem>
         <ListItem button>
-          <ListItemText primary="Áthatások/Vetítési. Rajzi egyszerűsítések" />*/}
+          <ListItemText primary="Áthatások/Vetítési. Rajzi egyszerűsítések" />
         </ListItem>
         <ListItem button>
           <ListItemText primary="Metszeti ábrázolás" />
