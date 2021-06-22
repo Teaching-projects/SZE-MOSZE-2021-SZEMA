@@ -1,38 +1,33 @@
-import React, { useState, useEffect } from "react";
 import AppBar from '@material-ui/core/AppBar';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
-import SignedInStarterLinks from '../SignedInStarterLinks'
-import 'firebase/firestore'
-import { withStyles } from "@material-ui/core/styles";
-import SearchField from 'react-search-field';
-
-import { makeStyles } from '@material-ui/core/styles';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Divider from '@material-ui/core/Divider';
+import FormControl from '@material-ui/core/FormControl';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import InputLabel from '@material-ui/core/InputLabel';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import Divider from '@material-ui/core/Divider';
-import InboxIcon from '@material-ui/icons/Inbox';
-import DraftsIcon from '@material-ui/icons/Drafts';
-
-import TextField from '@material-ui/core/TextField';
-import Autocomplete from '@material-ui/lab/Autocomplete';
-
 import MenuItem from '@material-ui/core/MenuItem';
-import FormHelperText from '@material-ui/core/FormHelperText';
-import FormControl from '@material-ui/core/FormControl';
-import InputLabel from '@material-ui/core/InputLabel';
 import Select from '@material-ui/core/Select';
-import Button from '@material-ui/core/Button';
-
+import { withStyles } from "@material-ui/core/styles";
+import TextField from '@material-ui/core/TextField';
+import Toolbar from '@material-ui/core/Toolbar';
 import Tooltip from '@material-ui/core/Tooltip';
-
-import QuestionAddAnswer from './questionBaseComponents/QuestionAddAnswer';
-import InputAdornment from '@material-ui/core/InputAdornment';
+import Typography from '@material-ui/core/Typography';
 import SearchIcon from "@material-ui/icons/Search";
+import Autocomplete from '@material-ui/lab/Autocomplete';
+import 'firebase/firestore';
+import React from "react";
+import SignedInStarterLinks from '../SignedInStarterLinks';
+import QuestionAddAnswer from './questionBaseComponents/QuestionAddAnswer';
+
+
+
+
+
 
 //for lists
 function ListItemLink(props) {
@@ -208,10 +203,9 @@ class QuestionBaseDashboard extends React.Component {
       <TextField 
           id="outlined-full-width"
           label="Új kérdés létrehozása"
-          style={{ margin: 8 }}
+          style={{ margin: 8, width: '91%' }}
           placeholder="Kérem írja be a kérdést..."
          // helperText="Full width!"
-         style ={{width: '91%'}}
           multiline
           margin="normal"
           InputLabelProps={{
@@ -222,10 +216,9 @@ class QuestionBaseDashboard extends React.Component {
         <TextField
           id="outlined-full-width"
           label="Helyes válasz megadása"
-          style={{ margin: 8 }}
+          style={{ margin: 8, width: '91%' }}
           placeholder="Kérem írja be a helyes választ..."
          // helperText="Full width!"
-         style ={{width: '91%'}}
           multiline
           margin="normal"
           InputLabelProps={{
