@@ -3,7 +3,7 @@ name: workflows cicd and image build
 on:
   push:
     branches:
-    - master
+    - feature/devops
 
 jobs:
   APP-CI:
