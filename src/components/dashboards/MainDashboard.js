@@ -1,20 +1,19 @@
-import React, { useState, useEffect } from "react";
-import AppBar from '@material-ui/core/AppBar';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Container from '@material-ui/core/Container';
-import SignedInStarterLinks from '../SignedInStarterLinks'
-import 'firebase/firestore'
-import { withStyles } from "@material-ui/core/styles";
 import { Button, Grid } from "@material-ui/core";
+import AppBar from '@material-ui/core/AppBar';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import 'firebase/firestore'
-import {db} from '../../config/base'
-import backgroundIMG from '../../SZEMA_WEB_background_3.svg'
+import Container from '@material-ui/core/Container';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import { withStyles } from "@material-ui/core/styles";
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import 'firebase/firestore';
+import React from "react";
+import { db } from '../../config/base';
+import backgroundIMG from '../../SZEMA_WEB_background_3.svg';
+import SignedInStarterLinks from '../SignedInStarterLinks';
 
 const useStyles = (theme) => ({
   icon: {
@@ -59,20 +58,20 @@ const useStyles = (theme) => ({
     marginTop:"10vh",
     textTransform: "none"
   }, 
-  cardGrid: {
-    marginTop:"10vh"
-  },
-  card: {
-    height: '100%',
-    display: 'flex',
-    flexDirection: 'column',
-  },
-  cardMedia: {
-    paddingTop: '56.25%', // 16:9
-  },
-  cardContent: {
-    flexGrow: 1,
-  },
+  // cardGrid: {
+  //   marginTop:"10vh"
+  // },
+  // card: {
+  //   height: '100%',
+  //   display: 'flex',
+  //   flexDirection: 'column',
+  // },
+  // cardMedia: {
+  //   paddingTop: '56.25%', // 16:9
+  // },
+  // cardContent: {
+  //   flexGrow: 1,
+  // },
 });
 
 class CreateTestDashboard extends React.Component {
@@ -122,7 +121,7 @@ class CreateTestDashboard extends React.Component {
               </Typography>
               <Grid className={classes.root} container spacing={3}>
                 <Grid item xs={12} sm={6} md={4}>
-                  <Button variant="contained" size="large" href="/questionbase" className={classes.simpleButton}>
+                  <Button variant="contained" size="large" href="/questionbase" className={classes.simpleButton} data-testid='question-base'>
                     Kérdésbázis megtekintése
                     </Button>
                 </Grid>
