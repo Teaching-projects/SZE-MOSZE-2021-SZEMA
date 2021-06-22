@@ -1,24 +1,22 @@
-import React, { useState, useEffect } from "react";
 import AppBar from '@material-ui/core/AppBar';
-import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
+import Container from '@material-ui/core/Container';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
+import { withStyles } from "@material-ui/core/styles";
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import Container from '@material-ui/core/Container';
-import SignedInStarterLinks from '../SignedInStarterLinks'
-import AddNewsDialog from '../dialogs/AddNewsDialog'
-import 'firebase/firestore'
-import {db} from '../../config/base'
-import { withStyles } from "@material-ui/core/styles";
-import UpdateNewsDialog from "../dialogs/UpdateNewsDialog";
+import 'firebase/firestore';
+import React from "react";
+import { db } from '../../config/base';
+import AddNewsDialog from '../dialogs/AddNewsDialog';
 import DeleteNewsDialog from '../dialogs/DeleteNewsDialog';
+import UpdateNewsDialog from "../dialogs/UpdateNewsDialog";
+import SignedInStarterLinks from '../SignedInStarterLinks';
 
-import Tooltip from '@material-ui/core/Tooltip';
 
 const useStyles = (theme) => ({
   icon: {
@@ -90,7 +88,7 @@ class NewsDashboard extends React.Component {
           {/* Hero unit */}
           <div className={classes.heroContent}>
             <Container maxWidth="sm">
-              <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
+              <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom data-testid="typo-graphy">
                   Hírek és újdonságok
               </Typography>
               <div className={classes.heroButtons}>
