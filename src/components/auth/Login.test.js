@@ -18,7 +18,7 @@ describe('Login Unit Tests', () => {
 
   beforeEach(() => {
     render(
-      <AuthContext.Provider value={{currentUser: {name: 'test'}}}>
+        <AuthContext.Provider value={{currentUser: null}}>
         <Router>
           <Login />
         </Router>
