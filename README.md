@@ -49,7 +49,7 @@ kisegíteni a nappali tagozatos vagy akár távoktatásba jelentkezett hallgató
   </ul>
 
 <h2>Docker</h2>
-...hamarosan
+...hamarosan!
 
 
 <h2>Doxygen dokumentáció </h2>
@@ -73,7 +73,3 @@ Hogyan unit tesztelhetünk react komponenseket?
 React komponensek unit teszteléséhez:
 
 * Jest: Nyílt forráskódú tesztelő keresztendszer, Facebook hozta létre. Tesztek futtatása parancssorból akár. Snapshot tesztelés funkció.
-
-
-
-## 2021
