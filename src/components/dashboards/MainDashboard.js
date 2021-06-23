@@ -74,7 +74,12 @@ const useStyles = (theme) => ({
   // },
 });
 
+/**
+ *  Class to extend test dachboard component
+ */
+
 class CreateTestDashboard extends React.Component {
+
 
   getCards = () => {
     db.collection('news')
