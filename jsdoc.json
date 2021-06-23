@@ -15,6 +15,6 @@
             "recurse": true,            
             "template": "./template",
             "tutorials": "./tutorials",
-            "readme": "./readme.md"
+            "readme": "./README.md"
         }
 }
