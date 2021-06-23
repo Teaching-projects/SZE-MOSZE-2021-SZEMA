@@ -1,0 +1,1 @@
+Fejlesztes soran elofordulo akadalyokhoz esetleges segitsegek.
