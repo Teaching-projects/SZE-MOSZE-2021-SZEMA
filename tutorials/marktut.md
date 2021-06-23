@@ -1,1 +1,1 @@
-Fejlesztes soran elofordulo akadalyokhoz esetleges segitsegek.
+Fejlesztes soran elofordulo akadalyokhoz esetleges segitsegek megoldasa.
