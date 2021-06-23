@@ -36,7 +36,8 @@ jobs:
           source_dir: ./src
           output_dir: ./out
           config_file: jsdoc.json
-          template: haruki
+          template: default
+          template_dir: template
           front_page: README.md
 
       - name: Deploy
