@@ -60,6 +60,7 @@
     ]
   },
   "devDependencies": {
+    "jsdoc": "^3.6.7",
     "node-sass": "^5.0.0"
   }
 }
