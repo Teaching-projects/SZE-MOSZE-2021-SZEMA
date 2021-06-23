@@ -17,6 +17,11 @@ const testString = "TestString";
  */
  const testNumber = 5;
 
+/**
+ * @file index.js is the homepage for SZEMA application.
+ * @author Tivadar K.
+ * @see <a href=https://tivadark.github.io/>Tivadar K.</a>
+ */
 
 ReactDOM.render(
   <React.StrictMode>

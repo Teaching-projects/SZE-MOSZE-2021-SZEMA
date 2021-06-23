@@ -15,5 +15,6 @@
             "recurse": true,            
             "template": "./template",
             "tutorials": "./tutorials"
+     
         }
 }
