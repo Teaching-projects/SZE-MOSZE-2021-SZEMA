@@ -1,8 +1,8 @@
 {
     "tutorial":{
-        "title":"Tutorial leírás"
+        "title":"Bugfix és megoldások"
     },
     "marktut":{
-        "title":"NPM modul segítség"
+        "title":"NPM modulok és parancsok"
     }
 }

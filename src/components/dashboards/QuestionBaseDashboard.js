@@ -126,8 +126,13 @@ const useStyles = (theme) => ({
   }
 });
 
+/**
+ * Az osztály segítségével a különböző kérdések kezelhetők, amelyeket témakörökhöz lehet fűzni.
+ */
+
 class QuestionBaseDashboard extends React.Component {
 
+/** @param {Props} props */
 
   constructor(props) {
     super(props);

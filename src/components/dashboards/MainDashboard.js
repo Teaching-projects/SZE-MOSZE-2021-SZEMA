@@ -75,7 +75,7 @@ const useStyles = (theme) => ({
 });
 
 /**
- *  Class to extend test dachboard component
+ *  Az osztály segítségével új teszt feladatsor állítható össze.
  */
 
 class CreateTestDashboard extends React.Component {
@@ -96,6 +96,9 @@ class CreateTestDashboard extends React.Component {
       })
       .catch( error => console.log(error))
   } 
+  
+  /** @param {Props} props */
+
   constructor(props) {
     super(props);
     this.state = {
