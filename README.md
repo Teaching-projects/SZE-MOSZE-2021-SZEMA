@@ -49,7 +49,7 @@ kisegíteni a nappali tagozatos vagy akár távoktatásba jelentkezett hallgató
   </ul>
 
 <h2>Docker</h2>
-...hamarosan!
+Workflow-ba épített automatikus image build és push, így tehát verziókat is megtudunk tartani a containerben.
 
 
 <h2>Doxygen dokumentáció </h2>

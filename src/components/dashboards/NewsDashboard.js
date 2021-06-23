@@ -50,6 +50,11 @@ const useStyles = (theme) => ({
   },
 });
 
+/**
+ * Az osztály segítségével a hírek oldalon lévő komponensek kezelhetők.
+ * 
+ */
+
 class NewsDashboard extends React.Component {
 
   getCards = () => {
@@ -65,6 +70,9 @@ class NewsDashboard extends React.Component {
       })
       .catch( error => console.log(error))
   }
+/** @param {Props} props */
+
+
   constructor(props) {
     super(props);
     this.state = {

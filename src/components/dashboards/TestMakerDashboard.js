@@ -10,8 +10,8 @@ import 'firebase/firestore'
 import '../../css/TestMakerDashboard.css'
 import Button from '@material-ui/core/Button';
 import TransferList from '../testmaker/TransferList';
-export default class TestMakerDashboard extends React.Component {
 
+export default class TestMakerDashboard extends React.Component {
 
     constructor(props) {
       super(props);
