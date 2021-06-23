@@ -1,0 +1,46 @@
+name: workflows cicd and image build 
+
+on:
+  push:
+    branches:
+    - JSDoc
+
+jobs:
+  APP-CI:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+    
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm i
+    - run: npm run test
+    - run: npm run test:coverage 
+    - run: npm run jsdoc
+  Image-build:
+    needs: [APP-CI]
+    if: success()
+    name: Docker build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Docker login
+      env:
+        DOCKER_USER: tivadark #${{ secrets.DOCKER_USER }}
+        DOCKER_PASSWORD: e09a600e-04fa-4566-a104-5129dd9c8ce8  #${{ secrets.DOCKER_PASSWORD }} 
+              
+      run: |
+        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+    - name: Docker build
+      run: |
+        docker build -t tivadark/tivadark-testapp:0.0.1 .
+    - name: Docker push images
+      run: |
+        docker push docker.io/tivadark/tivadark-testapp:0.0.1
