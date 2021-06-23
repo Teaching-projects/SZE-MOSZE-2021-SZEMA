@@ -23,6 +23,7 @@ jobs:
     - run: npm i
     - run: npm run test
     - run: npm run test:coverage 
+    - run: npm run jsdoc
   Image-build:
     needs: [APP-CI]
     if: success()

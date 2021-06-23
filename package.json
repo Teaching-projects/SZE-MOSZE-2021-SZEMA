@@ -39,7 +39,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "test:coverage": "react-scripts test --coverage"
+    "test:coverage": "react-scripts test --coverage",
+    "jsdoc": "jsdoc -c jsdoc.json"
   },
   "eslintConfig": {
     "extends": [
