@@ -35,7 +35,7 @@ jobs:
         with:
           source_dir: ./src
           output_dir: ./out
-          config_file: jsdoc.json
+          config_file: conf.json
           template: ./template
           front_page: README.md
 
