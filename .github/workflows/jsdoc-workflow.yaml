@@ -25,14 +25,8 @@ jobs:
     - run: npm run test:coverage 
     - run: npm run jsdoc
   GithubPages:
-      - name: JSDoc Action
-        uses: andstor/jsdoc-action@v1.2.0
-      with:
-        source_dir: ./src
-        recurse: true
-        output_dir: ./out
-      runs-on: ubuntu-latest
-      steps:
+    runs-on: ubuntu-latest
+    steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
@@ -42,7 +36,7 @@ jobs:
           source_dir: ./src
           output_dir: ./out
           config_file: jsdoc.json
-          template: minami
+          template_dir: template
           front_page: README.md
 
       - name: Deploy
