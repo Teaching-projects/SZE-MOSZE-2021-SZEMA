@@ -42,8 +42,11 @@ jobs:
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          deploy_key:  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 #${{ secrets.ACTIONS_DEPLOY_KEY }}
           publish_dir: ./out
+        # with:
+        #   github_token: ${{ secrets.GITHUB_TOKEN }}
+        #   publish_dir: ./public
   Image-build:
     needs: [APP-CI]
     if: success()
