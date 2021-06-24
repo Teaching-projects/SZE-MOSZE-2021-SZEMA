@@ -82,7 +82,7 @@ React komponensek unit teszteléséhez:
 * A project során lefedettségi tesztelés is építve lett, amely a ci során sikeres unit tesztek lefutását követően ellenőrzí, hogy a teljes kódrészlet hány százaléka van tesztekkel lefedve.
 
 
-####Csapattagok:
+#### Csapattagok:
 * Kamondy Tivadar - ZXCJX6 - https://github.com/tivadark
 * Banai Alex - https://github.com/Codename14
 * Csiszár Gergő - https://github.com/csiszar197
