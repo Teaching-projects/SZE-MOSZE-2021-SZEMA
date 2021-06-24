@@ -3,7 +3,7 @@ name: workflows cicd and image build
 on:
   push:
     branches:
-    - JSDoc
+    - gh-pages
 
 jobs:
   APP-CI:
