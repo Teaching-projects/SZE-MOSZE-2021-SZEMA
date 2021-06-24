@@ -36,6 +36,7 @@ jobs:
           source_dir: ./src
           output_dir: ./out
           config_file: jsdoc.json
+          template: templates
           front_page: README.md
 
       - name: Deploy
