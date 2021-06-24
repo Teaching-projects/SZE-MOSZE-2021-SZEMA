@@ -24,7 +24,7 @@ jobs:
     - run: npm run test
     - run: npm run test:coverage 
     - run: npm run jsdoc
-   GithubPages:
+  GithubPages:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -67,3 +67,4 @@ jobs:
     - name: Docker push images
       run: |
         docker push docker.io/tivadark/tivadark-masterapp:0.0.1
+        

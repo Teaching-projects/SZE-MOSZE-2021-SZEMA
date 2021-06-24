@@ -80,3 +80,10 @@ React komponensek unit teszteléséhez:
 ### JEST
 * Jest: Nyílt forráskódú tesztelő keresztendszer, Facebook hozta létre. Tesztek futtatása parancssorból akár. Snapshot tesztelés funkció.
 * A project során lefedettségi tesztelés is építve lett, amely a ci során sikeres unit tesztek lefutását követően ellenőrzí, hogy a teljes kódrészlet hány százaléka van tesztekkel lefedve.
+
+
+#### Csapattagok:
+* Kamondy Tivadar - ZXCJX6 - https://github.com/tivadark
+* Banai Alex - https://github.com/Codename14
+* Csiszár Gergő - https://github.com/csiszar197
+* Zajovics Eszter - https://github.com/zajovicseszter
