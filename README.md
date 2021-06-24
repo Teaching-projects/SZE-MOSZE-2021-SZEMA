@@ -4,6 +4,10 @@
   <h2>Feladat</h2> SZEMA webes alkalmazás fejlesztése modern szoftverfejlesztési eszközökkel
  </p>
  
+<h4>Kód védés és prezentációs videó</h4>
+https://github.com/Teaching-projects/SZE-MOSZE-2021-SZEMA/tree/master/videos
+
+ 
  <p>
  <h4>Rövid feladatleírás</h4>
 Webfelület fejlesztése a SZEMA applikációhoz, az oktató felhasználók feladat adatbázishoz való
@@ -41,27 +45,29 @@ bővítse az oktatás eszközrendszerét és azt könnyen hozzáférhetővé teg
 kisegíteni a nappali tagozatos vagy akár távoktatásba jelentkezett hallgatók tanulmányait.
 >
 
+
 <h2>Használt technológiák, eszközök</h2>
   <ul>
-    <li>Frontend: JavaScript, HTML, CSS, React keretrendszer</li>
+    <li>Frontend: JavaScript, HTML, CSS, React front-end keretrendszer</li>
     <li>Backend: Firebase </li>
 
   </ul>
 
 <h2>Docker</h2>
-Workflow-ba épített automatikus image build és push, így tehát verziókat is megtudunk tartani a containerben.
+
+Workflow-ba épített automatikus image build és push, így tehát a container verzió history-ként is funkcionálhat.
+
+Github actions segítségével a docker imagek automatikusan buildelnek a sikeres hitelesítés után minden master / vagy külön beállított branch push esetén githubon. Verzió növelése esetén újbuli buildelés kerül sor a docker környezetünkbe is, de ha nem állítunk ezen, akkor a docker környezetünkben a régebbi fájlok fognak buildelni és ez elérhetővé válik a containerben. Docker image build csak abban az esetben valósul meg ha, az elozo workflow sikeresen lefutott.
 
 
-<h2>Doxygen dokumentáció </h2>
+<h2>Doxygen (JSDoc) dokumentáció </h2>
 
 Mivel a frontendként a React keresztrendszert használtuk az alkalmazás fejlesztése során, ezért a dokumentáláshoz megvizsgáltuk a különböző felhasználható alternativákat, mint:
 * JSDoc: 
   * A react komponenseit használva készít dokumentációt a kódból.
   * Visual Studio Code-al támogatottság.
-* React Styleguidist:
   * Az elkészített kódból generál dokumentumot API segítségével.
-  * Könnyen konfigurálható, könnyen elérhetők a dokumentumok
-  * A dokumentáció hosztolható webpack segítségével.
+  * Könnyen konfigurálható, könnyen elérhetők a dokumentumok, amelyek deployolhatók automatikusan workflow segítségével gh-pages-re.
 
 <h2>Unit tesztelés </h2>
 Hogyan unit tesztelhetünk react komponenseket?
@@ -71,5 +77,6 @@ Hogyan unit tesztelhetünk react komponenseket?
 * Komponens gyerekeinek a számának ellenőrzése a kívánt értékekkel.
 
 React komponensek unit teszteléséhez:
-
+### JEST
 * Jest: Nyílt forráskódú tesztelő keresztendszer, Facebook hozta létre. Tesztek futtatása parancssorból akár. Snapshot tesztelés funkció.
+* A project során lefedettségi tesztelés is építve lett, amely a ci során sikeres unit tesztek lefutását követően ellenőrzí, hogy a teljes kódrészlet hány százaléka van tesztekkel lefedve.
