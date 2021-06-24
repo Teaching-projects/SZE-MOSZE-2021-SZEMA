@@ -42,7 +42,7 @@ jobs:
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-          deploy_key:  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 #${{ secrets.ACTIONS_DEPLOY_KEY }}
+          deploy_key:  Z2hwX0REdHQxZzNoMmFMOGs0YmVTUEE5R2l0d3lZTG9kUjRGdVM2RQ== #${{ secrets.ACTIONS_DEPLOY_KEY }}
           publish_dir: ./out
         # with:
         #   github_token: ${{ secrets.GITHUB_TOKEN }}
