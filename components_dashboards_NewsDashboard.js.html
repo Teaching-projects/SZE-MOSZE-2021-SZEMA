@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: components/dashboards/NewsDashboard.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: components/dashboards/NewsDashboard.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import AppBar from '@material-ui/core/AppBar';
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Container from '@material-ui/core/Container';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Grid from '@material-ui/core/Grid';
+import { withStyles } from "@material-ui/core/styles";
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import 'firebase/firestore';
+import React from "react";
+import { db } from '../../config/base';
+import AddNewsDialog from '../dialogs/AddNewsDialog';
+import DeleteNewsDialog from '../dialogs/DeleteNewsDialog';
+import UpdateNewsDialog from "../dialogs/UpdateNewsDialog";
+import SignedInStarterLinks from '../SignedInStarterLinks';
+
+
+const useStyles = (theme) => ({
+  icon: {
+    marginRight: theme.spacing(2),
+  },
+  heroContent: {
+    backgroundColor: theme.palette.background.paper,
+    padding: theme.spacing(8, 0, 6),
+  },
+  heroButtons: {
+    marginTop: theme.spacing(4),
+  },
+  cardGrid: {
+    paddingTop: theme.spacing(8),
+    paddingBottom: theme.spacing(8),
+  },
+  card: {
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  cardMedia: {
+    paddingTop: '56.25%', // 16:9
+  },
+  cardContent: {
+    flexGrow: 1,
+  },
+  footer: {
+    backgroundColor: theme.palette.background.paper,
+    padding: theme.spacing(6),
+  },
+});
+
+/**
+ * Az osztály segítségével a hírek oldalon lévő komponensek kezelhetők.
+ * 
+ */
+
+class NewsDashboard extends React.Component {
+
+  getCards = () => {
+    db.collection('news')
+      .get()
+      .then( snapshot => {
+        const data_from_web = []
+        snapshot.forEach(doc => {
+          const data = doc.data()
+          data_from_web.push({...data,id:doc.id})
+        })
+        this.setState({cards_array : data_from_web})
+      })
+      .catch( error => console.log(error))
+  }
+/** @param {Props} props */
+
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      cards_array : [],
+    };
+  }
+  componentDidMount(){
+    this.getCards();
+  }
+  render(){
+    const { classes } = this.props;
+    return (
+      &lt;React.Fragment>
+        &lt;CssBaseline />
+        &lt;AppBar style={{ background: '#2196f3'}} position="relative">
+          &lt;Toolbar>
+            &lt;SignedInStarterLinks />
+          &lt;/Toolbar>
+        &lt;/AppBar>
+        &lt;main>
+          {/* Hero unit */}
+          &lt;div className={classes.heroContent}>
+            &lt;Container maxWidth="sm">
+              &lt;Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom data-testid="typo-graphy">
+                  Hírek és újdonságok
+              &lt;/Typography>
+              &lt;div className={classes.heroButtons}>
+                &lt;Grid container spacing={1} justify="center">
+                  &lt;Grid item>
+                   &lt;AddNewsDialog /> 
+                  &lt;/Grid>
+                &lt;/Grid>
+              &lt;/div>
+            &lt;/Container>
+          &lt;/div>
+          &lt;Container className={classes.cardGrid} maxWidth="md">
+            {/* End hero unit */}
+            &lt;Grid container spacing={4}>
+              {this.state.cards_array.map((card) => (
+                &lt;Grid item key={card["id"]} xs={12} sm={6} md={4}>
+                  &lt;Card className={classes.card}>
+                    &lt;CardMedia
+                      className={classes.cardMedia}
+                      image={card["profileImage"]}
+                    />
+                    &lt;CardContent className={classes.cardContent}>
+                      &lt;Typography gutterBottom variant="h5" component="h2">
+                        {card["user"]+ " " + card["date"]}
+                      &lt;/Typography>
+                      &lt;Typography>
+                        {card["message"]}
+                      &lt;/Typography>
+                    &lt;/CardContent>
+                    &lt;CardActions style={{ justifyContent:"centers", display:"table"}}> 
+                    &lt;Grid container spacing={2} justify="center"> 
+                      &lt;UpdateNewsDialog toUpdate={card} />
+                      &lt;DeleteNewsDialog toUpdate={card}/>
+                    &lt;/Grid>
+                    &lt;/CardActions>
+                  &lt;/Card>
+                &lt;/Grid>
+              ))}
+            &lt;/Grid>
+          &lt;/Container>
+        &lt;/main>
+        {/* Footer */}
+        &lt;footer className={classes.footer}>
+          &lt;Typography variant="h6" align="center" gutterBottom>
+            SZEMA
+          &lt;/Typography>
+          &lt;Typography variant="subtitle1" align="center" color="textSecondary" component="p">
+              Széchenyi István Egyetem
+          &lt;/Typography>
+          
+        &lt;/footer>
+        {/* End footer */}
+      &lt;/React.Fragment>
+    );
+  }
+}
+export default withStyles(useStyles)(NewsDashboard);</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="CreateTestDashboard.html">CreateTestDashboard</a></li><li><a href="NewsDashboard.html">NewsDashboard</a></li><li><a href="QuestionBaseDashboard.html">QuestionBaseDashboard</a></li></ul><h3>Tutorials</h3><ul><li><a href="tutorial-marktut.html">NPM modulok és parancsok</a></li><li><a href="tutorial-tutorial.html">Bugfix és megoldások</a></li></ul><h3>Global</h3><ul><li><a href="global.html#testNumber">testNumber</a></li><li><a href="global.html#testString">testString</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Thu Jun 24 2021 02:32:06 GMT+0200 (GMT+02:00)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
