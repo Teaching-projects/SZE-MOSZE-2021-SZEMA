@@ -34,7 +34,7 @@ jobs:
         uses: andstor/jsdoc-action@v1
         with:
           source_dir: ./src
-          output_dir: ./jsdoc
+          output_dir: ./out
           config_file: jsdoc.json
           template: minami
           front_page: README.md
@@ -46,7 +46,7 @@ jobs:
          # publish_dir: ./out
         # with:
            github_token: ${{ secrets.GITHUB_TOKEN }}
-           publish_dir: ./public
+           publish_dir: ./jsdoc
   Image-build:
     needs: [APP-CI]
     if: success()
