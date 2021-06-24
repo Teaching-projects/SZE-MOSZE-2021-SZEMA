@@ -52,7 +52,7 @@ kisegíteni a nappali tagozatos vagy akár távoktatásba jelentkezett hallgató
 Workflow-ba épített automatikus image build és push, így tehát verziókat is megtudunk tartani a containerben.
 
 
-<h2>Doxygen dokumentáció </h2>
+<h2>(Doxygen alternatíva)/JSDoc automatikusan generált dokumentáció </h2>
 
 Mivel a frontendként a React keresztrendszert használtuk az alkalmazás fejlesztése során, ezért a dokumentáláshoz megvizsgáltuk a különböző felhasználható alternativákat, mint:
 * JSDoc: 
