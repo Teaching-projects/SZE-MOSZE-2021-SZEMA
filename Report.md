@@ -16,6 +16,15 @@
 
 # Unit tesztek
 
+| Komponensek/osztályok |
+| --- | 
+| `Auth` | 
+| `Login` |
+| `MainDashboard` |
+| `CreateTestDashboard` |
+| `NewDashboard` |
+
+
 # Kód dokumentáció
 
 # Mindenféle számok
